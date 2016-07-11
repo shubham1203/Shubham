@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Expense Manager</string>
+    <string name="add_trip">Add New Trip</string>
+    <string name="view_all_trips">View All Trips</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="view_balance">View Balance Budget</string>
+    <string name="submit_details">Submit Details</string>
+</resources>
