@@ -42,7 +42,7 @@ public class AddExpenseActivity extends AppCompatActivity {
         s1.setAdapter(ar);
     }
     public void submitExpense(View v){
-        try{
+//        try{
             String cat = category.getText().toString();
             int amt = Integer.parseInt(amount.getText().toString());
             String dt = date.getText().toString();
@@ -56,11 +56,11 @@ public class AddExpenseActivity extends AppCompatActivity {
             while(c.moveToNext()){
                 amt_total = amt_total + Integer.parseInt(c.getString(0));
             }
-            String e = "Select bud_approved from Trip_Details where trip_id = " + tripid + "'";
-            c = db.rawQuery(e,null);
-            int amt_bud = Integer.parseInt(c.getString(0));
+            String e = "Select bud_approved from Trip_Details where trip_id = '" + tripid + "'";
+            Cursor d = db.rawQuery(e,null);
+            int amt_bud = Integer.parseInt(d.getString(0));
             amt_bud = amt_bud - amt_total;
-            db.execSQL("Update Trip_Details SET bud_bal = "+ amt_bud + "WHERE trip_id = "+ tripid +"'");
+            db.execSQL("Update Trip_Details SET bud_bal = "+ amt_bud + "WHERE trip_id = '" + tripid + "'");
 //            Log.d("TEST","----------------1");
 //            String s = "Select exp_id from Expense_Details where trip_id = 'e125'";
 //            Cursor c = db.rawQuery(s,null);
@@ -70,9 +70,9 @@ public class AddExpenseActivity extends AppCompatActivity {
 //            Toast.makeText(AddExpenseActivity.this, t, Toast.LENGTH_SHORT).show();
             Toast.makeText(AddExpenseActivity.this, "Expense Inserted", Toast.LENGTH_SHORT).show();
 
-        }
-        catch (Exception e){
-            Toast.makeText(AddExpenseActivity.this, "Could Not Insert", Toast.LENGTH_SHORT).show();
-        }
+//        }
+//        catch (Exception e){
+//            Toast.makeText(AddExpenseActivity.this, "Could Not Insert", Toast.LENGTH_SHORT).show();
+//        }
     }
 }
