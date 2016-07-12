@@ -9,15 +9,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hpes.shubham.myexpensemanager.AddExpenseActivity">
 
-
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etCategory"
-        android:hint="Category"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/spinCat"
         android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinID"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/spinCat"
+        android:layout_alignParentStart="true" />
+
+
 
     <EditText
         android:layout_width="match_parent"
@@ -25,7 +31,7 @@
         android:inputType="number"
         android:id="@+id/etAmtSpent"
         android:hint="Amount Spent"
-        android:layout_below="@+id/etCategory"
+        android:layout_below="@+id/spinID"
         android:layout_alignParentStart="true"
         android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
@@ -39,13 +45,7 @@
         android:layout_below="@+id/etAmtSpent"
         android:layout_alignParentStart="true" />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_below="@+id/etDate"
-        android:layout_alignParentStart="true" />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -55,6 +55,8 @@
         android:text="@string/submit_details"
         android:id="@+id/button5"
         android:onClick="submitExpense"
-        android:layout_below="@+id/spinner" />
+        android:layout_below="@+id/etDate" />
+
+
 
 </RelativeLayout>

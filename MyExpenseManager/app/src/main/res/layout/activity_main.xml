@@ -53,4 +53,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Details"
+        android:id="@+id/btnUpdate"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/button4"
+        android:onClick="updateDetails"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Trips"
+        android:id="@+id/btnDelete"
+        android:layout_below="@+id/btnUpdate"
+        android:onClick="delDetails"
+        android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
 </RelativeLayout>

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SQLiteDatabase db = openOrCreateDatabase("db_expense",MODE_APPEND,null);
-        String q = "Create table if not exists Trip_Details(trip_id varchar, from_loc varchar, to_loc varchar, start_date date, end_date date, bud_approved number, bud_bal number, CONSTRAINT trip_pk PRIMARY KEY (trip_id))";
+        String q = "Create table if not exists Trip_Details(trip_id varchar, from_loc varchar, to_loc varchar, start_date date, end_date date, bud_approved integer, bud_bal integer, CONSTRAINT trip_pk PRIMARY KEY (trip_id))";
         db.execSQL(q);
         String s = "Create table if not exists Expense_Details(exp_id integer PRIMARY KEY AUTOINCREMENT,trip_id varchar,category varchar, " +
                 "amount_spent integer, date date, CONSTRAINT fk_expense FOREIGN KEY(trip_id) REFERENCES Trip_Details(trip_id))";
@@ -38,9 +38,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void balBudget(View v){
-
+        Intent i = new Intent(MainActivity.this,ViewBalanceActivity.class);
+        startActivity(i);
     }
 
+    public void updateDetails(View v){
+        Intent i = new Intent(MainActivity.this,UpdateActivity.class);
+        startActivity(i);
+    }
+
+    public void delDetails(View v){
+        Intent i = new Intent(MainActivity.this,DeleteActivity.class);
+        startActivity(i);
+    }
 
 
 }

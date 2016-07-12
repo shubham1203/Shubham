@@ -24,7 +24,11 @@
         </activity>
         <activity android:name=".AddTripActivity" />
         <activity android:name=".AddExpenseActivity" />
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".ViewTableActivity" />
+        <activity android:name=".ViewBalanceActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".DeleteActivity"></activity>
     </application>
 
 </manifest>
