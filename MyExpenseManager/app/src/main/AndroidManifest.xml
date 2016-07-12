@@ -28,7 +28,8 @@
         <activity android:name=".ViewTableActivity" />
         <activity android:name=".ViewBalanceActivity" />
         <activity android:name=".UpdateActivity" />
-        <activity android:name=".DeleteActivity"></activity>
+        <activity android:name=".DeleteActivity" />
+        <activity android:name=".UpdateValuesActivity"></activity>
     </application>
 
 </manifest>

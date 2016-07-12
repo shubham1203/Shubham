@@ -1,5 +1,6 @@
 package com.hpes.shubham.myexpensemanager;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +46,7 @@ public class UpdateActivity extends AppCompatActivity {
                 Cursor c = db.rawQuery(q,null);
                 while(c.moveToNext()){
                     String name;
-                    for(int k = 0; k <= 4; k++){
+                    for(int k = 2; k <= 4; k++){
                         name = c.getColumnName(k);
                         al.add(name);
                     }
@@ -58,7 +59,10 @@ public class UpdateActivity extends AppCompatActivity {
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        //Use intent to pass name from this activity to next activity and update it therein
+                        Intent intent = new Intent(UpdateActivity.this,UpdateValuesActivity.class);
+                        String item = String.valueOf(adapterView.getItemAtPosition(i));
+                        intent.putExtra("item_name",item);
+                        startActivity(intent);
                     }
                 });
 

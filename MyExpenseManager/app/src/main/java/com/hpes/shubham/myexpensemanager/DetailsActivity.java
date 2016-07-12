@@ -59,24 +59,10 @@ public class DetailsActivity extends AppCompatActivity {
                         intent.putExtra("spinner",t);
                         intent.putExtra("options",r);
                         startActivity(intent);
-//                        Toast.makeText(DetailsActivity.this, e, Toast.LENGTH_SHORT).show();
                     }
 
                 });
 
-//                lv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//                    @Override
-//                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                        Intent intent = new Intent(DetailsActivity.this,ViewTableActivity.class);
-//                        Toast.makeText(DetailsActivity.this, lv.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-//                        Toast.makeText(DetailsActivity.this, s1.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onNothingSelected(AdapterView<?> adapterView) {
-//
-//                    }
-//                });
             }
 
             @Override
